@@ -1,0 +1,50 @@
+[
+  {
+    "id": "demo-p1",
+    "project_name": "Sayar Tesisat",
+    "slug": "sayar-tesisat",
+    "client_name": "Sayar Tesisat",
+    "sector": "Tesisat",
+    "summary": "Web sitesi, SEO ve Google Ads entegrasyonu ile online görünürlük artırıldı.",
+    "cover_image": "/uploads/e0f87157-b599-4c74-b789-a797cf618788.png",
+    "is_active": true,
+    "is_featured": true,
+    "website_url": "https://sayartesisat.com"
+  },
+  {
+    "id": "demo-p2",
+    "project_name": "Lüks Mimarlık",
+    "slug": "luks-mimarlik",
+    "client_name": "Lüks Mimarlık",
+    "sector": "Mimarlık",
+    "summary": "Kurumsal web sitesi tasarımı ve SEO altyapısı oluşturuldu.",
+    "cover_image": "",
+    "is_active": true,
+    "is_featured": true,
+    "website_url": ""
+  },
+  {
+    "id": "demo-p3",
+    "project_name": "Nova Lojistik",
+    "slug": "nova-lojistik",
+    "client_name": "Nova Lojistik",
+    "sector": "Lojistik",
+    "summary": "SEO optimizasyonu ve Google Ads yönetimi ile müşteri kazanımı sağlandı.",
+    "cover_image": "",
+    "is_active": true,
+    "is_featured": false,
+    "website_url": ""
+  },
+  {
+    "id": "demo-p4",
+    "project_name": "Mavi Marin",
+    "slug": "mavi-marin",
+    "client_name": "Mavi Marin",
+    "sector": "Turizm",
+    "summary": "Kurumsal kimlik, web sitesi ve dijital pazarlama entegrasyonu.",
+    "cover_image": "",
+    "is_active": true,
+    "is_featured": false,
+    "website_url": ""
+  }
+]

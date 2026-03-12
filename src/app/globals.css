@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #0A0A0F;
+  --color-bg-secondary: #111321;
+  --color-surface: #141626;
+  --color-border: #24263A;
+  --color-primary: #2D6BFF;
+  --color-secondary: #8B3DFF;
+  --color-accent: #5DA9FF;
+  
+  /* Text Contrast System */
+  --color-text-heading: #FFFFFF;
+  --color-text-main: #C7CBD6;
+  --color-text-desc: #AEB6C5;
+  --color-text-meta: #8F98A8;
+  --color-text-disabled: #667085;
+}
+
+body {
+  color: var(--color-text-main);
+  background: var(--color-bg);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Base Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text-heading);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+/* Custom Scrollbar for non-lenis fallback */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* Lenis Recommended global styles */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Custom Typography (Prose) for Detail Pages */
+.prose {
+  line-height: 1.75;
+  color: var(--color-text-main);
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  color: var(--color-text-heading);
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.2;
+}
+
+.prose h1 { font-size: 2.5rem; }
+.prose h2 { font-size: 2rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem; }
+.prose h3 { font-size: 1.5rem; }
+.prose h4 { font-size: 1.25rem; }
+
+.prose p {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  font-size: 1.125rem;
+}
+
+.prose ul, .prose ol {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.prose li {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose ul { list-style-type: disc; }
+.prose ol { list-style-type: decimal; }
+
+.prose blockquote {
+  font-style: italic;
+  border-left-width: 4px;
+  border-left-color: var(--color-primary);
+  padding-left: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  color: var(--color-text-desc);
+}
+
+.prose strong {
+  color: var(--color-text-heading);
+  font-weight: 600;
+}
+
+.prose img {
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.prose a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.prose a:hover {
+  color: var(--color-accent);
+}
+
+/* Prose Invert (Dark Mode Default) */
+.prose-invert {
+  color: var(--color-text-main);
+}
+
+.prose-invert h1, .prose-invert h2, .prose-invert h3, .prose-invert h4 {
+  color: #FFFFFF;
+}
+
+.prose-invert strong {
+  color: #FFFFFF;
+}

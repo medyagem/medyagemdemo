@@ -1,0 +1,21 @@
+{
+  "site_name": "MedyaGem Dijital Pazarlama ve SEO Ajansı",
+  "site_description": "Türkiye genelinde dijital pazarlama, SEO, Google Ads ve web tasarım hizmetleri sunan profesyonel ajans.",
+  "site_keywords": "dijital pazarlama, seo, web tasarım, google ads, sosyal medya yönetimi",
+  "robots_txt": "User-agent: *\nAllow: /\nDisallow: /admin\nDisallow: /api\nDisallow: /_next/\nDisallow: /static/\n\n# Sitemap\nSitemap: https://medyagem.com/sitemap.xml\n",
+  "site_logo": "/uploads/14940f5b-09ea-49bf-bddc-fc293315401e.png",
+  "site_favicon": "/uploads/c8078a63-42e2-4136-85ff-87ec4369a0f3.png",
+  "email": "info@medyagem.com",
+  "phone": "0538 629 5834",
+  "address": "İstanbul, Türkiye",
+  "whatsapp": "+905386295834",
+  "google_tag_manager": "",
+  "google_analytics": "",
+  "google_ads_conversion": "",
+  "facebook_pixel": "",
+  "yandex_verification": "",
+  "bing_verification": "",
+  "pinterest_verification": "",
+  "head_scripts": "",
+  "footer_scripts": ""
+}

@@ -1,0 +1,16 @@
+{
+  "name": "MedyaGem | Dijital Ajans",
+  "short_name": "MedyaGem",
+  "description": "Premium Dijital Pazarlama Ajansı",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0A0F",
+  "theme_color": "#0A0A0F",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "192x192",
+      "type": "image/x-icon"
+    }
+  ]
+}

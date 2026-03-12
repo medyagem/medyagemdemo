@@ -1,0 +1,24 @@
+{
+  "title": "Müşterilerimiz Ne Diyor?",
+  "description": "Sadece söz vermiyor, sonuç üretiyoruz.",
+  "items": [
+    {
+      "quote": "MedyaGem ile çalışmaya başladıktan sadece 3 ay sonra organik trafiklerimiz ikiye katlandı.",
+      "name": "Hüseyin Sayarlar",
+      "company": "Sayar Tesisat",
+      "role": "Kurucu"
+    },
+    {
+      "quote": "Google Ads bütçemizi önceki ajanslara göre çok daha verimli yönetiyorlar.",
+      "name": "Ayşe Özdemir",
+      "company": "Nova Lojistik",
+      "role": "Pazarlama Müdürü"
+    },
+    {
+      "quote": "Yeni web sitemizi o kadar hızlı ve profesyonel hazırladılar ki inanamadık.",
+      "name": "Mehmet Çelik",
+      "company": "Lüks Mimarlık",
+      "role": "Mimar / Kurucu"
+    }
+  ]
+}

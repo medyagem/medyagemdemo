@@ -1,0 +1,33 @@
+{
+  "title": "MedyaGem Nedir?",
+  "description": "Biz, dijital dünyada sadece var olmanızı değil, parlamanızı sağlayan performans odaklı bir ajansız. İşletmenizin hedeflerini kendi hedeflerimiz gibi benimsiyoruz.",
+  "pillars": [
+    {
+      "title": "Strateji",
+      "desc": "İşletmenize özel dijital büyüme planı oluştururuz."
+    },
+    {
+      "title": "Teknoloji",
+      "desc": "Hızlı ve SEO uyumlu web altyapıları kurarız."
+    },
+    {
+      "title": "Performans",
+      "desc": "Veriye dayalı reklam ve SEO yönetimi yaparız."
+    }
+  ],
+  "stats": [
+    {
+      "value": "150+",
+      "label": "Başarılı Proje"
+    },
+    {
+      "value": "10+",
+      "label": "Farklı Sektör"
+    },
+    {
+      "value": "81",
+      "label": "İlde Hizmet"
+    }
+  ],
+  "main_image": "/uploads/6d71dc3e-b26b-41c3-912d-bd12e39b96db.webp"
+}

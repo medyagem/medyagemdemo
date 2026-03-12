@@ -1,0 +1,92 @@
+[
+  {
+    "id": "demo-1",
+    "page_key": "hakkimizda",
+    "title": "Hakkımızda",
+    "slug": "hakkimizda",
+    "status": "published",
+    "hero_title": "Hakkımızda",
+    "hero_description": "MedyaGem dijital pazarlama ajansı hakkında bilgi edinin.",
+    "content_json": ""
+  },
+  {
+    "id": "demo-2",
+    "page_key": "iletisim",
+    "title": "İletişim",
+    "slug": "iletisim",
+    "status": "published",
+    "hero_title": "İletişim",
+    "hero_description": "Bizimle iletişime geçin.",
+    "content_json": ""
+  },
+  {
+    "id": "demo-3",
+    "page_key": "hizmetler",
+    "title": "Hizmetler",
+    "slug": "hizmetler",
+    "status": "published",
+    "hero_title": "Hizmetlerimiz",
+    "hero_description": "Dijital pazarlama hizmetlerimizi keşfedin.",
+    "content_json": ""
+  },
+  {
+    "id": "demo-4",
+    "page_key": "blog",
+    "title": "Blog",
+    "slug": "blog",
+    "status": "published",
+    "hero_title": "Blog",
+    "hero_description": "Dijital pazarlama dünyasından en güncel yazılar.",
+    "content_json": ""
+  },
+  {
+    "id": "demo-5",
+    "page_key": "calismalar",
+    "title": "Çalışmalarımız",
+    "slug": "calismalar",
+    "status": "published",
+    "hero_title": "Çalışmalarımız",
+    "hero_description": "Tamamladığımız başarılı projeler.",
+    "content_json": ""
+  },
+  {
+    "id": "demo-6",
+    "page_key": "sss",
+    "title": "Sıkça Sorulan Sorular",
+    "slug": "sss",
+    "status": "published",
+    "hero_title": "SSS",
+    "hero_description": "Sıkça sorulan soruların cevapları.",
+    "content_json": ""
+  },
+  {
+    "id": "demo-7",
+    "page_key": "bolgeler",
+    "title": "Hizmet Bölgeleri",
+    "slug": "bolgeler",
+    "status": "published",
+    "hero_title": "Hizmet Bölgeleri",
+    "hero_description": "Türkiye genelinde hizmet verdiğimiz lokasyonlar.",
+    "content_json": ""
+  },
+  {
+    "id": "demo-8",
+    "page_key": "kvkk",
+    "title": "KVKK Aydınlatma Metni",
+    "slug": "kvkk",
+    "status": "published",
+    "hero_title": "KVKK Aydınlatma Metni",
+    "hero_description": "Kişisel verilerin korunması hakkında bilgilendirme.",
+    "content_json": "{\"content\":\"<h2>Kişisel Verilerin Korunması Hakkında Aydınlatma Metni</h2><p>Bu aydınlatma metni, 6698 sayılı Kişisel Verilerin Korunması Kanunu (\\\"KVKK\\\") uyarınca, MedyaGem Dijital Pazarlama tarafından kişisel verilerinizin işlenmesine ilişkin olarak sizleri bilgilendirmek amacıyla hazırlanmıştır.</p><h3>1. Veri Sorumlusu</h3><p>MedyaGem Dijital Pazarlama, KVKK kapsamında veri sorumlusu sıfatıyla kişisel verilerinizi işlemektedir.</p><h3>2. İşlenen Kişisel Veriler</h3><p>Ad-soyad, e-posta adresi, telefon numarası, IP adresi, çerez verileri ve iletişim formu aracılığıyla paylaşılan bilgiler işlenebilmektedir.</p><h3>3. Kişisel Verilerin İşlenme Amaçları</h3><ul><li>Hizmetlerimizin sunulması ve geliştirilmesi</li><li>İletişim taleplerinin yanıtlanması</li><li>Yasal yükümlülüklerin yerine getirilmesi</li><li>Web sitesi performansının analiz edilmesi</li></ul><h3>4. İletişim</h3><p>KVKK kapsamındaki taleplerinizi info@medyagem.com adresine iletebilirsiniz.</p>\"}"
+  },
+  {
+    "id": "demo-9",
+    "page_key": "cerez-politikasi",
+    "title": "Çerez Politikası",
+    "slug": "cerez-politikasi",
+    "status": "published",
+    "hero_title": "Çerez Politikası",
+    "hero_description": "Web sitemizde kullanılan çerezler hakkında bilgilendirme.",
+    "content_json": "{\"content\":\"<h2>Çerez Politikası</h2><p>Bu Çerez Politikası, MedyaGem web sitesinde kullanılan çerezlerin türleri, amaçları ve yönetim seçenekleri hakkında sizi bilgilendirmek amacıyla hazırlanmıştır.</p><h3>1. Çerez Nedir?</h3><p>Çerezler, web sitemizi ziyaret ettiğinizde tarayıcınız aracılığıyla cihazınıza yerleştirilen küçük metin dosyalarıdır.</p><h3>2. Kullanılan Çerez Türleri</h3><h4>Zorunlu Çerezler</h4><p>Web sitesinin düzgün çalışması için gerekli olan çerezlerdir.</p><h4>Analitik Çerezler</h4><p>Google Analytics gibi araçlar aracılığıyla ziyaretçi davranışlarını analiz etmek için kullanılır.</p><h3>3. İletişim</h3><p>Çerez politikamız hakkında sorularınız için info@medyagem.com adresinden bize ulaşabilirsiniz.</p>\"}"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "demo-f1",
+    "group_key": "genel",
+    "question": "SEO ne kadar sürede sonuç verir?",
+    "answer": "SEO uzun vadeli bir yatırımdır. Genellikle ilk etkileri 3. aydan itibaren gözlemleriz; kalıcı sonuçlar 6-12 ay arasında alınır.",
+    "order_no": 1,
+    "is_active": true
+  },
+  {
+    "id": "demo-f2",
+    "group_key": "genel",
+    "question": "Web sitesi kaç günde yapılır?",
+    "answer": "Standart bir web sitesinin tasarımı genellikle 10 ila 15 iş günü arasında tamamlanmaktadır.",
+    "order_no": 2,
+    "is_active": true
+  },
+  {
+    "id": "demo-f3",
+    "group_key": "Google ADS",
+    "question": "Google Ads için minimum bütçe nedir?",
+    "answer": "Aylık minimum 10.000 TL – 15.000 TL arası bir reklam bütçesi ile başlamanızı tavsiye ediyoruz.",
+    "order_no": 3,
+    "is_active": true
+  },
+  {
+    "id": "demo-f4",
+    "group_key": "genel",
+    "question": "Türkiye geneline hizmet veriyor musunuz?",
+    "answer": "Evet, Türkiye'nin 81 iline profesyonel hizmet sunuyoruz.",
+    "order_no": 4,
+    "is_active": true
+  },
+  {
+    "id": "demo-f5",
+    "group_key": "genel",
+    "question": "Raporlama nasıl yapılıyor?",
+    "answer": "Her ay düzenli olarak performans raporu paylaşıyoruz. Trafik, dönüşüm, reklam harcaması ve ROI detaylıca analiz edilir.",
+    "order_no": 5,
+    "is_active": true
+  }
+]

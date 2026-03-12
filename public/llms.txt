@@ -1,0 +1,20 @@
+# MedyaGem - Dijital Ajans
+MedyaGem, İstanbul Sultanbeyli merkezli, Türkiye genelinde web sitesi kurulumu, SEO yönetimi ve Google Ads hizmetleri sunan premium bir dijital ajanstır.
+
+## Hakkımızda
+İşletmeleri dijitale en iyi şekilde taşıyoruz. SEO, Web Tasarım ve Google Ads alanlarında uçtan uca çözümler sunuyoruz. Veri odaklı ve tasarım odaklı yaklaşımımızla sektörde öne çıkıyoruz.
+
+## Temel Hizmetlerimiz
+- Web Tasarım ve Geliştirme (Next.js, Full-stack web uygulamaları)
+- SEO (Arama Motoru Optimizasyonu, Teknik SEO, AI-SEO)
+- Google Ads ve Dijital Pazarlama Yönetimi
+- Marka Kimliği ve Kurumsal Kimlik Tasarımı
+
+## İletişim Bilgileri
+- Web Sitesi: https://medyagem.com
+- Telefon: 05386295834
+- Lokasyon: Sultanbeyli, İstanbul / Türkiye
+- Çalışma Saatleri: Hafta içi 09:00 - 18:00
+
+## Otorite ve Güven
+Sektördeki tecrübemiz ve şeffaf çalışma süreçlerimizle işletmelerin dijital görünürlüğünü organik ve ücretli yollarla maksimuma çıkarıyoruz. Süreçlerimiz analitik verilere, modern web Core Web Vitals metriklerine ve premium UX/UI tasarımlara dayanmaktadır.

@@ -1,0 +1,25 @@
+{
+  "title": "Türkiye Genelinde Dijital Hizmet",
+  "description": "Lokasyon gözetmeksizin, ülkenin her noktasına aynı kalitede dijital pazarlama hizmeti ulaştırıyoruz.",
+  "cities": [
+    {
+      "name": "İstanbul",
+      "link": "/bolgeler/istanbul"
+    },
+    "Ankara",
+    "İzmir",
+    "Bursa",
+    "Antalya",
+    "Adana",
+    "Konya",
+    "Gaziantep",
+    "Kocaeli",
+    "Mersin",
+    "Kayseri",
+    "Samsun",
+    "Eskişehir",
+    "Denizli",
+    "Sakarya"
+  ],
+  "extra_count": "+66 Şehir"
+}

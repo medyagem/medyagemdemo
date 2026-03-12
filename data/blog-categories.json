@@ -1,0 +1,6 @@
+[
+  { "id": "cat-b1", "name": "Google Ads", "slug": "google-ads", "description": "Reklam yönetimi ve stratejileri.", "order_no": 1, "is_active": true },
+  { "id": "cat-b2", "name": "SEO", "slug": "seo", "description": "Arama motoru optimizasyonu teknikleri.", "order_no": 2, "is_active": true },
+  { "id": "cat-b3", "name": "Web Tasarım", "slug": "web-tasarim", "description": "Modern ve hızlı web arayüzleri.", "order_no": 3, "is_active": true },
+  { "id": "cat-b4", "name": "Yazılım", "slug": "yazilim", "description": "Özel yazılım çözümleri.", "order_no": 4, "is_active": true }
+]

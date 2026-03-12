@@ -1,0 +1,5 @@
+[
+  { "id": "cat-s1", "name": "Dijital Pazarlama", "slug": "dijital-pazarlama", "description": "Markanızın dijitaldeki büyümesi.", "order_no": 1, "is_active": true },
+  { "id": "cat-s2", "name": "Web Çözümleri", "slug": "web-cozumleri", "description": "Web sitenizi profesyonel hale getirin.", "order_no": 2, "is_active": true },
+  { "id": "cat-s3", "name": "SEO & Analiz", "slug": "seo-analiz", "description": "Veri odaklı optimizasyon.", "order_no": 3, "is_active": true }
+]

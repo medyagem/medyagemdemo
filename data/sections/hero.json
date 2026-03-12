@@ -1,0 +1,25 @@
+{
+  "badge": "Türkiye Geneli Hizmet",
+  "title_line1": "İşinizi Büyüten",
+  "title_line2": "Web Sitesi ve Dijital",
+  "title_line3": "Pazarlama Çözümleri",
+  "description": "Türkiye genelinde web sitesi kurulumu, SEO yönetimi ve Google Ads hizmetleri ile işletmenizin dijitalde büyümesini sağlıyoruz.",
+  "cta_primary": "WhatsApp ile Teklif Al",
+  "cta_primary_link": "https://wa.me/+905386295834",
+  "cta_secondary": "Hemen Ara",
+  "cta_secondary_link": "tel://+905386295834",
+  "stats": [
+    {
+      "value": "150+",
+      "label": "Proje"
+    },
+    {
+      "value": "10+",
+      "label": "Sektör"
+    },
+    {
+      "value": "81 İl",
+      "label": "Türkiye Geneli"
+    }
+  ]
+}

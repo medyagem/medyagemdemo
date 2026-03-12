@@ -1,0 +1,58 @@
+[
+  {
+    "id": "sec-1",
+    "section_key": "hero",
+    "name": "Hero Banner",
+    "display_order": 1,
+    "is_visible": true
+  },
+  {
+    "id": "sec-2",
+    "section_key": "hizmetler",
+    "name": "Hizmetler",
+    "display_order": 2,
+    "is_visible": true
+  },
+  {
+    "id": "sec-3",
+    "section_key": "hakkimizda",
+    "name": "Hakkımızda",
+    "display_order": 3,
+    "is_visible": true
+  },
+  {
+    "id": "sec-4",
+    "section_key": "projeler",
+    "name": "Çalışmalarımız",
+    "display_order": 4,
+    "is_visible": true
+  },
+  {
+    "id": "sec-5",
+    "section_key": "testimonials",
+    "name": "Müşteri Yorumları",
+    "display_order": 5,
+    "is_visible": true
+  },
+  {
+    "id": "sec-6",
+    "section_key": "faq",
+    "name": "SSS",
+    "display_order": 6,
+    "is_visible": true
+  },
+  {
+    "id": "sec-7",
+    "section_key": "blog_preview",
+    "name": "Blog Önizleme",
+    "display_order": 7,
+    "is_visible": true
+  },
+  {
+    "id": "sec-8",
+    "section_key": "cta",
+    "name": "CTA",
+    "display_order": 8,
+    "is_visible": true
+  }
+]

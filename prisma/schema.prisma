@@ -1,0 +1,246 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model HomepageSection {
+  id              String   @id @default(uuid())
+  section_key     String   @unique
+  title           String?
+  subtitle        String?
+  description     String?
+  content_json    String?  // Stored as JSON string
+  is_active       Boolean  @default(true)
+  display_order   Int      @default(0)
+  theme_variant   String?
+  seo_anchor_id   String?
+  created_at      DateTime @default(now())
+  updated_at      DateTime @updatedAt
+}
+
+model Page {
+  id               String   @id @default(uuid())
+  page_key         String   @unique
+  title            String
+  slug             String   @unique
+  hero_title       String?
+  hero_description String?
+  hero_image       String?
+  content_json     String?
+  status           String   @default("published")
+  template         String?
+  seo_id           String?
+  schema_id        String?
+  created_at       DateTime @default(now())
+  updated_at       DateTime @updatedAt
+}
+
+model Service {
+  id                    String   @id @default(uuid())
+  name                  String
+  slug                  String   @unique
+  card_title            String?
+  card_description      String?
+  card_icon             String?
+  hero_title            String?
+  hero_description      String?
+  hero_visual_type      String?
+  hero_visual_data      String?
+  overview_title        String?
+  overview_content      String?  @db.Text
+  included_items_json   String?  @db.Text
+  process_steps_json    String?  @db.Text
+  related_services_json String?  @db.Text
+  
+  // Yeni CMS Alanları
+  cover_image           String?
+  meta_description      String?
+  tags                  String?
+  faq_json              String?  @db.Text
+
+  category_id           String?
+  category              ServiceCategory? @relation(fields: [category_id], references: [id])
+
+  is_featured           Boolean  @default(false)
+  is_active             Boolean  @default(true)
+  seo_id                String?
+  schema_id             String?
+  created_at            DateTime @default(now())
+  updated_at            DateTime @updatedAt
+}
+
+model ServiceCategory {
+  id            String    @id @default(uuid())
+  name          String
+  slug          String    @unique
+  description   String?
+  order_no      Int       @default(0)
+  is_active     Boolean   @default(true)
+  services      Service[]
+  created_at    DateTime  @default(now())
+  updated_at    DateTime  @updatedAt
+}
+
+model BlogPost {
+  id                 String   @id @default(uuid())
+  title              String
+  slug               String   @unique
+  excerpt            String?
+  cover_image        String?
+  content_json       String?  @db.LongText
+  
+  // Yeni CMS Alanları
+  meta_description   String?
+  tags               String?  // Virgülle ayrılmış etiketler için
+  faq_json           String?  @db.Text
+
+  category_id        String?
+  category           BlogCategory? @relation(fields: [category_id], references: [id])
+  
+  tag_ids_json       String?
+  author_name        String?
+  reading_time       String?
+  published_at       DateTime?
+  is_featured        Boolean  @default(false)
+  is_active          Boolean  @default(true)
+  average_rating     Float    @default(0)
+  rating_count       Int      @default(0)
+  related_posts_json String?
+  seo_id             String?
+  schema_id          String?
+  created_at         DateTime @default(now())
+  updated_at         DateTime @updatedAt
+}
+
+model BlogCategory {
+  id            String     @id @default(uuid())
+  name          String
+  slug          String     @unique
+  description   String?
+  order_no      Int        @default(0)
+  is_active     Boolean    @default(true)
+  posts         BlogPost[]
+  created_at    DateTime   @default(now())
+  updated_at    DateTime   @updatedAt
+}
+
+model Region {
+  id                      String   @id @default(uuid())
+  name                    String
+  slug                    String   @unique
+  short_description       String?
+  hero_title              String?
+  hero_description        String?
+  cover_image             String?
+  overview_content        String?
+  services_in_region_json String?
+  faq_group_id            String?
+  related_regions_json    String?
+  average_rating          Float    @default(0)
+  rating_count            Int      @default(0)
+  is_featured             Boolean  @default(false)
+  is_active               Boolean  @default(true)
+  seo_id                  String?
+  schema_id               String?
+  created_at              DateTime @default(now())
+  updated_at              DateTime @updatedAt
+}
+
+model Project {
+  id                 String   @id @default(uuid())
+  project_name       String
+  slug               String   @unique
+  client_name        String?
+  sector             String?
+  services_used_json String?
+  summary            String?
+  cover_image        String?
+  gallery_json       String?
+  website_url        String?
+  results_json       String?
+  is_featured        Boolean  @default(false)
+  is_active          Boolean  @default(true)
+  seo_id             String?
+  created_at         DateTime @default(now())
+  updated_at         DateTime @updatedAt
+}
+
+model FaqItem {
+  id                String   @id @default(uuid())
+  group_key         String
+  question          String
+  answer            String
+  order_no          Int      @default(0)
+  is_active         Boolean  @default(true)
+  include_in_schema Boolean  @default(true)
+  created_at        DateTime @default(now())
+  updated_at        DateTime @updatedAt
+}
+
+model Review {
+  id           String   @id @default(uuid())
+  entity_type  String   // "service", "blog_post", "region"
+  entity_id    String
+  author_name  String
+  rating       Int
+  comment      String?
+  status       String   @default("pending") // "pending", "approved", "rejected"
+  is_verified  Boolean  @default(false)
+  submitted_at DateTime @default(now())
+  approved_at  DateTime?
+}
+
+model SeoMeta {
+  id                      String   @id @default(uuid())
+  entity_type             String
+  entity_id               String
+  seo_title               String?
+  meta_description        String?
+  canonical_url           String?
+  robots_index            Boolean  @default(true)
+  robots_follow           Boolean  @default(true)
+  og_title                String?
+  og_description          String?
+  og_image                String?
+  twitter_card            String?
+  focus_keyword           String?
+  secondary_keywords_json String?
+  breadcrumb_title        String?
+  created_at              DateTime @default(now())
+  updated_at              DateTime @updatedAt
+}
+
+model SchemaConfig {
+  id             String   @id @default(uuid())
+  entity_type    String
+  entity_id      String
+  schema_type    String
+  schema_enabled Boolean  @default(true)
+  schema_json    String?  // Stored as JSON string
+  created_at     DateTime @default(now())
+  updated_at     DateTime @updatedAt
+}
+
+model SiteSetting {
+  id         String   @id @default(uuid())
+  group      String   @unique // "contact", "design", "integrations", "global_schema", "footer", "header"
+  data_json  String?
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+model SiteActivity {
+  id        String   @id @default(uuid())
+  type      String   // "blog", "service", etc.
+  action    String   // "create", "update", "delete"
+  title     String
+  user      String   @default("Admin")
+  timestamp DateTime @default(now())
+}

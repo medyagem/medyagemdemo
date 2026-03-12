@@ -1,0 +1,47 @@
+[
+  {
+    "id": "demo-rv1",
+    "entity_type": "service",
+    "entity_id": "demo-s1",
+    "author_name": "Ahmet Yılmaz",
+    "rating": 5,
+    "comment": "MedyaGem ile çalışmaya başladıktan 3 ay sonra organik trafiklerimiz ikiye katlandı.",
+    "status": "approved",
+    "is_verified": true,
+    "submitted_at": "2026-10-01T00:00:00.000Z"
+  },
+  {
+    "id": "demo-rv2",
+    "entity_type": "service",
+    "entity_id": "demo-s2",
+    "author_name": "Ayşe Özdemir",
+    "rating": 5,
+    "comment": "Google Ads bütçemizi önceki ajanslara göre çok daha verimli yönetiyorlar.",
+    "status": "approved",
+    "is_verified": true,
+    "submitted_at": "2026-09-28T00:00:00.000Z"
+  },
+  {
+    "id": "demo-rv3",
+    "entity_type": "service",
+    "entity_id": "demo-s3",
+    "author_name": "Mehmet Çelik",
+    "rating": 5,
+    "comment": "Yeni web sitemizi o kadar hızlı ve profesyonel hazırladılar ki inanamadık.",
+    "status": "approved",
+    "is_verified": false,
+    "submitted_at": "2026-09-15T00:00:00.000Z"
+  },
+  {
+    "id": "demo-rv4",
+    "entity_type": "blog_post",
+    "entity_id": "demo-b1",
+    "author_name": "Ali Kaya",
+    "rating": 4,
+    "comment": "SEO konusunda çok bilgilendirici bir makale.",
+    "status": "approved",
+    "is_verified": false,
+    "submitted_at": "2026-10-10T00:00:00.000Z",
+    "approved_at": "2026-03-12T00:24:34.338Z"
+  }
+]
