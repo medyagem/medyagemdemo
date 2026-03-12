@@ -1,29 +1,29 @@
 const { createServer } = require('http')
 const { parse } = require('url')
+const { execSync } = require('child_process')
 const next = require('next')
 
 const dev = process.env.NODE_ENV !== 'production'
 const hostname = 'localhost'
 const port = process.env.PORT || 3000
-// when using middleware `hostname` and `port` must be provided below
+
+// Push database schema before starting the server
+try {
+  console.log('> Pushing database schema...')
+  execSync('npx prisma db push --skip-generate', { stdio: 'inherit' })
+  console.log('> Database schema pushed successfully')
+} catch (err) {
+  console.error('> Warning: Could not push database schema:', err.message)
+}
+
 const app = next({ dev, hostname, port })
 const handle = app.getRequestHandler()
 
 app.prepare().then(() => {
   createServer(async (req, res) => {
     try {
-      // Be sure to pass `true` as the second argument to `url.parse`.
-      // This tells it to parse the query portion of the URL.
       const parsedUrl = parse(req.url, true)
-      const { pathname, query } = parsedUrl
-
-      if (pathname === '/a') {
-        await app.render(req, res, '/a', query)
-      } else if (pathname === '/b') {
-        await app.render(req, res, '/b', query)
-      } else {
-        await handle(req, res, parsedUrl)
-      }
+      await handle(req, res, parsedUrl)
     } catch (err) {
       console.error('Error occurred handling', req.url, err)
       res.statusCode = 500
