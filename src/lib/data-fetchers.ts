@@ -105,3 +105,36 @@ export async function getProjects() {
     return [];
   }
 }
+
+export async function getProjectBySlug(slug: string) {
+  try {
+    return await prisma.project.findUnique({
+      where: { slug }
+    });
+  } catch (error) {
+    console.error("getProjectBySlug error:", error);
+    return null;
+  }
+}
+
+export async function getBlogCategoryBySlug(slug: string) {
+  try {
+    return await prisma.blogCategory.findUnique({
+      where: { slug }
+    });
+  } catch (error) {
+    console.error("getBlogCategoryBySlug error:", error);
+    return null;
+  }
+}
+
+export async function getServiceCategoryBySlug(slug: string) {
+  try {
+    return await prisma.serviceCategory.findUnique({
+      where: { slug }
+    });
+  } catch (error) {
+    console.error("getServiceCategoryBySlug error:", error);
+    return null;
+  }
+}

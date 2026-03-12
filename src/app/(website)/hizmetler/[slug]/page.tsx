@@ -148,7 +148,7 @@ export default async function ServiceDetailPage({ params }: { params: { slug: st
           ...(category ? [{ label: category.name, href: `/hizmetler/kategori/${category.slug}` }] : []),
           { label: serviceName }
         ]}
-        image={service.cover_image}
+        image={service.cover_image ?? undefined}
         imageAlt={service.cover_image_alt || serviceName}
       />
 

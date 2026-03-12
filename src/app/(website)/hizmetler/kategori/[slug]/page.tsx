@@ -3,27 +3,12 @@ import PageHero from "@/components/ui/PageHero";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Monitor, BarChart2, MousePointerClick, CheckCircle, Smartphone, PenTool, Search, Globe } from "lucide-react";
 import Cta from "@/sections/Cta";
-import fs from "fs";
-import path from "path";
+import { getServiceCategoryBySlug, getServices } from "@/lib/data-fetchers";
 
 const ICONS = [Monitor, BarChart2, MousePointerClick, CheckCircle, Smartphone, PenTool, Search, Globe];
 
-async function getCategoryData(slug: string) {
-  const filePath = path.join(process.cwd(), "data", "service-categories.json");
-  if (!fs.existsSync(filePath)) return null;
-  const cats = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-  return cats.find((c: any) => c.slug === slug);
-}
-
-async function getServicesByCategory(categoryId: string) {
-  const servicePath = path.join(process.cwd(), "data", "services.json");
-  if (!fs.existsSync(servicePath)) return [];
-  const services = JSON.parse(fs.readFileSync(servicePath, "utf-8"));
-  return services.filter((s: any) => s.category_id === categoryId && s.is_active !== false);
-}
-
 export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const category = await getCategoryData(params.slug);
+  const category = await getServiceCategoryBySlug(params.slug);
   if (!category) return {};
   return {
     title: `${category.name} Hizmetleri - MedyaGem`,
@@ -32,10 +17,11 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 export default async function ServiceCategoryPage({ params }: { params: { slug: string } }) {
-  const category = await getCategoryData(params.slug);
+  const category = await getServiceCategoryBySlug(params.slug);
   if (!category) notFound();
 
-  const services = await getServicesByCategory(category.id);
+  const allServices = await getServices();
+  const services = allServices.filter((s) => s.category_id === category.id);
 
   return (
     <>
@@ -66,7 +52,7 @@ export default async function ServiceCategoryPage({ params }: { params: { slug: 
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-              {services.map((service: any, index: number) => {
+              {services.map((service, index) => {
                 const IconComponent = ICONS[index % ICONS.length];
                 return (
                   <Link key={service.id} href={`/hizmetler/${service.slug}`} className="group flex flex-col bg-surface border border-border overflow-hidden hover:border-primary transition-all duration-500 rounded-2xl shadow-xl hover:shadow-primary/5">

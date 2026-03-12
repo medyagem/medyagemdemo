@@ -95,7 +95,7 @@ export default async function RegionDetailPage({ params }: { params: { slug: str
         title={<><span className="text-transparent bg-clip-text bg-brand-glow">{heroTitle}</span></>}
         description={heroDesc}
         breadcrumbItems={[{ label: "Bölgeler", href: "/bolgeler" }, { label: cityName }]}
-        image={region.cover_image}
+        image={region.cover_image ?? undefined}
         imageAlt={region.cover_image_alt || cityName}
       />
 

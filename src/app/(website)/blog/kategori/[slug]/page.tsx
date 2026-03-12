@@ -1,28 +1,12 @@
-import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import PageHero from "@/components/ui/PageHero";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Cta from "@/sections/Cta";
-import fs from "fs";
-import path from "path";
-
-async function getCategoryData(slug: string) {
-  const filePath = path.join(process.cwd(), "data", "blog-categories.json");
-  if (!fs.existsSync(filePath)) return null;
-  const cats = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-  return cats.find((c: any) => c.slug === slug);
-}
-
-async function getPostsByCategory(categoryId: string) {
-  const blogPath = path.join(process.cwd(), "data", "blog-posts.json");
-  if (!fs.existsSync(blogPath)) return [];
-  const posts = JSON.parse(fs.readFileSync(blogPath, "utf-8"));
-  return posts.filter((p: any) => p.category_id === categoryId && p.is_active !== false);
-}
+import { getBlogCategoryBySlug, getBlogPosts } from "@/lib/data-fetchers";
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const category = await getCategoryData(params.slug);
+  const category = await getBlogCategoryBySlug(params.slug);
   if (!category) return {};
   return {
     title: `${category.name} - MedyaGem Blog`,
@@ -31,10 +15,11 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 export default async function BlogCategoryPage({ params }: { params: { slug: string } }) {
-  const category = await getCategoryData(params.slug);
+  const category = await getBlogCategoryBySlug(params.slug);
   if (!category) notFound();
 
-  const posts = await getPostsByCategory(category.id);
+  const allPosts = await getBlogPosts();
+  const posts = allPosts.filter((p) => p.category_id === category.id);
 
   return (
     <>
@@ -65,7 +50,7 @@ export default async function BlogCategoryPage({ params }: { params: { slug: str
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {posts.map((post: any) => (
+              {posts.map((post) => (
                 <Link key={post.id} href={`/blog/${post.slug}`} className="group flex flex-col h-full bg-surface border border-border rounded-xl overflow-hidden hover:border-primary transition-all duration-300">
                   {post.cover_image && (
                     <div className="h-[200px] w-full overflow-hidden">

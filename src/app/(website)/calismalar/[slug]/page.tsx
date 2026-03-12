@@ -1,49 +1,36 @@
-"use client";
-
-import { useState, useEffect } from "react";
+import { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 import ShareButtons from "@/components/ui/ShareButtons";
 import { ArrowLeft, ExternalLink, Building2, Briefcase } from "lucide-react";
 import Link from "next/link";
 import Cta from "@/sections/Cta";
+import { getProjectBySlug } from "@/lib/data-fetchers";
+import { notFound } from "next/navigation";
 
-export default function ProjectDetailPage({ params }: { params: { slug: string } }) {
-  const [project, setProject] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
-  const currentUrl = `https://medyagem.com/calismalar/${params.slug}`;
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const project = await getProjectBySlug(params.slug);
+  if (!project) return { title: "Proje Bulunamadı | MedyaGem" };
 
-  useEffect(() => {
-    fetch("/api/admin/projects")
-      .then(r => r.json())
-      .then(data => {
-        if (Array.isArray(data)) {
-          const found = data.find((p: any) => p.slug === params.slug);
-          if (found) setProject(found);
-        }
-      })
-      .catch(() => {})
-      .finally(() => setLoading(false));
-  }, [params.slug]);
+  return {
+    title: `${project.project_name} | MedyaGem Çalışmalar`,
+    description: project.summary ?? undefined,
+    openGraph: {
+      title: project.project_name,
+      description: project.summary ?? undefined,
+      url: `https://medyagem.com/calismalar/${params.slug}`,
+      images: project.cover_image ? [{ url: project.cover_image }] : [],
+    },
+  };
+}
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-background">
-        <span className="text-desc text-lg">Yükleniyor...</span>
-      </div>
-    );
-  }
+export default async function ProjectDetailPage({ params }: { params: { slug: string } }) {
+  const project = await getProjectBySlug(params.slug);
 
   if (!project) {
-    return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-background gap-6">
-        <span className="text-heading text-2xl font-bold">Proje bulunamadı</span>
-        <Link href="/calismalar" className="text-primary hover:underline flex items-center gap-2">
-          <ArrowLeft className="w-4 h-4" /> Çalışmalara Dön
-        </Link>
-      </div>
-    );
+    notFound();
   }
 
+  const currentUrl = `https://medyagem.com/calismalar/${params.slug}`;
   const projectName = project.project_name || params.slug.replace(/-/g, " ").toUpperCase();
 
   return (
@@ -102,7 +89,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
             <div className="space-y-6">
               <div className="bg-surface border border-border rounded-xl p-8 space-y-6">
                 <h3 className="text-lg font-bold text-heading border-b border-border pb-4">Proje Bilgileri</h3>
-                
+
                 {project.client_name && (
                   <div className="flex items-start gap-3">
                     <Building2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
@@ -124,9 +111,9 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
                 )}
 
                 {project.website_url && (
-                  <a 
-                    href={project.website_url} 
-                    target="_blank" 
+                  <a
+                    href={project.website_url}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-primary hover:text-accent transition-colors font-medium mt-4"
                   >
@@ -135,8 +122,8 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
                 )}
               </div>
 
-              <Link 
-                href="/calismalar" 
+              <Link
+                href="/calismalar"
                 className="flex items-center gap-2 text-desc hover:text-primary transition-colors font-medium"
               >
                 <ArrowLeft className="w-4 h-4" /> Tüm Çalışmalar
