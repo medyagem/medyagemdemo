@@ -18,14 +18,14 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     description: region.hero_description || `MedyaGem ${cityName} Dijital Ajans ve Web Tasarım Hizmetleri`,
     openGraph: {
       title: region.hero_title || cityName,
-      description: region.hero_description,
+      description: region.hero_description ?? undefined,
       url: `https://medyagem.com/bolgeler/${params.slug}`,
       images: region.cover_image ? [{ url: region.cover_image }] : [],
     },
     twitter: {
       card: "summary_large_image",
       title: region.hero_title || cityName,
-      description: region.hero_description,
+      description: region.hero_description ?? undefined,
       images: region.cover_image ? [region.cover_image] : [],
     },
   };

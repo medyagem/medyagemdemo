@@ -61,6 +61,7 @@ model Service {
   
   // Yeni CMS Alanları
   cover_image           String?
+  cover_image_alt       String?
   meta_description      String?
   tags                  String?
   faq_json              String?  @db.Text
@@ -106,6 +107,10 @@ model BlogPost {
   
   tag_ids_json       String?
   author_name        String?
+  author_image       String?
+  cover_image_alt    String?
+  tldr               String?  @db.Text
+  related_service    String?
   reading_time       String?
   published_at       DateTime?
   is_featured        Boolean  @default(false)
@@ -139,6 +144,8 @@ model Region {
   hero_title              String?
   hero_description        String?
   cover_image             String?
+  cover_image_alt         String?
+  intro_title             String?
   overview_content        String?
   services_in_region_json String?
   faq_group_id            String?

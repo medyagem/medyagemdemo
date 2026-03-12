@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     description: post.meta_description || post.excerpt || "MedyaGem dijital pazarlama rehberi.",
     openGraph: {
       title: post.title,
-      description: post.excerpt,
+      description: post.excerpt ?? undefined,
       url: `https://medyagem.com/blog/${params.slug}`,
       images: post.cover_image ? [{ url: post.cover_image }] : [],
       type: "article",
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     twitter: {
       card: "summary_large_image",
       title: post.title,
-      description: post.excerpt,
+      description: post.excerpt ?? undefined,
       images: post.cover_image ? [post.cover_image] : [],
     },
   };
@@ -138,7 +138,7 @@ export default async function BlogDetailPage({ params }: { params: { slug: strin
             "headline": articleTitle,
             "image": post.cover_image ? [{ "@type": "ImageObject", "url": post.cover_image, "caption": post.cover_image_alt || articleTitle }] : [],
             "author": { "@type": "Person", "name": authorName, ...(authorImage ? { "image": authorImage } : {}) },
-            "datePublished": post.published_at || post.created_at || "",
+            "datePublished": (post.published_at || post.created_at || "").toString(),
             "publisher": {
               "@type": "Organization",
               "name": "MedyaGem",

@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     description: service.hero_description || "MedyaGem dijital pazarlama çözümleri.",
     openGraph: {
       title: service.hero_title || service.name,
-      description: service.hero_description,
+      description: service.hero_description ?? undefined,
       url: `https://medyagem.com/hizmetler/${params.slug}`,
       images: service.cover_image ? [{ url: service.cover_image }] : [],
     },
