@@ -1,22 +1,13 @@
 const { createServer } = require('http')
 const { parse } = require('url')
-const { execSync } = require('child_process')
 const next = require('next')
 
-const dev = process.env.NODE_ENV !== 'production'
-const hostname = 'localhost'
+// Force production mode
+process.env.NODE_ENV = 'production'
+
 const port = process.env.PORT || 3000
+const app = next({ dev: false, port })
 
-// Push database schema before starting the server
-try {
-  console.log('> Pushing database schema...')
-  execSync('npx prisma db push --skip-generate', { stdio: 'inherit' })
-  console.log('> Database schema pushed successfully')
-} catch (err) {
-  console.error('> Warning: Could not push database schema:', err.message)
-}
-
-const app = next({ dev, hostname, port })
 const handle = app.getRequestHandler()
 
 app.prepare().then(() => {
@@ -35,6 +26,6 @@ app.prepare().then(() => {
       process.exit(1)
     })
     .listen(port, () => {
-      console.log(`> Ready on http://${hostname}:${port}`)
+      console.log(`> Ready on http://localhost:${port}`)
     })
 })
