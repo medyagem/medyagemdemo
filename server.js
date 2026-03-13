@@ -1,3 +1,4 @@
+const path = require('path')
 const { createServer } = require('http')
 const { parse } = require('url')
 const next = require('next')
@@ -6,8 +7,8 @@ const next = require('next')
 process.env.NODE_ENV = 'production'
 
 const port = process.env.PORT || 3000
-const app = next({ dev: false, port })
-
+const dir = path.resolve(__dirname)
+const app = next({ dev: false, dir })
 const handle = app.getRequestHandler()
 
 app.prepare().then(() => {
