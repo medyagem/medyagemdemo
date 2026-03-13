@@ -43,10 +43,10 @@ export default function AdminDashboardPage() {
   }, []);
 
   const stats = [
-    { label: "Aktif Hizmetler", value: data?.stats.services || 0, color: "text-brand-primary", icon: Briefcase },
-    { label: "Blog Yazıları", value: data?.stats.blog || 0, color: "text-state-warning", icon: FileText },
-    { label: "Onay Bekleyen Yorumlar", value: data?.stats.reviews || 0, color: "text-state-error", icon: MessageCircle },
-    { label: "Toplam Bölge", value: data?.stats.regions || 0, color: "text-state-success", icon: Globe }
+    { label: "Aktif Hizmetler", value: data?.stats?.services || 0, color: "text-brand-primary", icon: Briefcase },
+    { label: "Blog Yazıları", value: data?.stats?.blog || 0, color: "text-state-warning", icon: FileText },
+    { label: "Onay Bekleyen Yorumlar", value: data?.stats?.reviews || 0, color: "text-state-error", icon: MessageCircle },
+    { label: "Toplam Bölge", value: data?.stats?.regions || 0, color: "text-state-success", icon: Globe }
   ];
 
   if (loading) {

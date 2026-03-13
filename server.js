@@ -2,6 +2,9 @@ const { createServer } = require('http')
 const { parse } = require('url')
 const next = require('next')
 
+// Ensure production mode on Hostinger (local dev uses 'npm run dev' instead)
+if (!process.env.NODE_ENV) process.env.NODE_ENV = 'production'
+
 const dev = process.env.NODE_ENV !== 'production'
 const hostname = 'localhost'
 const port = process.env.PORT || 3000
